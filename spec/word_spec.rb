@@ -31,4 +31,12 @@ describe(Word) do
         end
     end
 
+    describe('#w_id') do
+        it("resturns a unique identifier for a word object") do
+            test_word = Word.new(:name => "hello")
+            test_word.save()
+            expect(test_word.w_id()).to(eq(1))
+        end
+    end
+
 end
