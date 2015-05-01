@@ -39,4 +39,14 @@ describe(Word) do
         end
     end
 
+    describe('.find') do
+        it("returns the word based on the unique identifier") do
+            test_word = Word.new(:name => "hello")
+            test_word.save()
+            test_word2 = Word.new(:name => "bye")
+            test_word2.save()
+            expect(Word.find(test_word2.w_id())).to(eq(test_email2))
+        end
+    end
+
 end
