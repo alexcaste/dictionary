@@ -49,4 +49,15 @@ describe(Word) do
         end
     end
 
+    describe('.delete') do
+        it("deletes a word from the all_words array") do
+            test_word = Word.new(:name => "hello")
+            test_word.save()
+            test_word2 = Word.new(:name => "bye")
+            test_word2.save()
+            Word.delete(test_word)
+            expect(Word.all()).to(eq([test_word2]))
+        end
+    end
+
 end
