@@ -30,7 +30,7 @@ class Word
         found_word = nil
         @@all_words.each() do |word|
             if word.w_id() == id.to_i
-                found_word = word
+                fouWordnd_word = word
             end
         end
         found_word
@@ -39,11 +39,6 @@ class Word
     define_method(:add_definition) do |new_def|
         @definition.push(new_def)
     end
-    #
-    # define_singleton_method(:del_def) do |target_def|
-    #   to_delete = target_def
-    #   @definition.delete_if{|inside_def| inside_def.eql?(to_delete)}
-    # end
 
     define_singleton_method(:delete) do |target_word|
         to_delete = target_word.w_id()

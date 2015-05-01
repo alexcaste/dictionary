@@ -10,7 +10,7 @@ Description
 
 Dictionary
 
-(Description)
+This is an app that allows users to add words.  Users can then add definitions to those words they have added.
 
 Author
 

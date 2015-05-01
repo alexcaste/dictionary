@@ -15,7 +15,6 @@ describe(Word) do
         end
     end
 
-
     describe('#save') do
         it("saves a word into an array as an object") do
             test_word = Word.new(:name => "hello")
@@ -61,4 +60,5 @@ describe(Word) do
             expect(Word.all()).to(eq([test_word2]))
         end
     end
+
 end

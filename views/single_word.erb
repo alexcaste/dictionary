@@ -2,6 +2,7 @@
 
 <ol>
     <% @word.definition().each() do |definition| %>
+    <h4>Definition:</h4>
     <h4><%= definition.define() %></h4>
     <h4>When this definition is used <%= @word.name() %> is a <%= definition.w_class() %></h4>
     <% end %>
