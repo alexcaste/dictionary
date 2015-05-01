@@ -81,4 +81,17 @@ describe(Word) do
     #     expect(Word.sort_id(test_word.name())).to(eq(test_word.w_id()))
     #     end
     # end
+
+    describe('.delete_def') do
+        it("deletes a definition from a word") do
+                test_word = Word.new(:name => "hello")
+                test_word.save()
+                test_def1 = Definition.new(:w_class => "noun", :define => "hello")
+                test_word.add_definition(test_def1)
+                test_def2 = Definition.new(:w_class => "verb", :define => "hi")
+                test_word.add_definition(test_def2)
+                Word.del_def(test_def1)
+                expect(test_word.definition()).to(eq([test_def2]))
+        end
+    end
 end

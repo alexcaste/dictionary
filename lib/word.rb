@@ -71,6 +71,10 @@ class Word
         @definition.push(new_def)
     end
 
+    define_singleton_method(:del_def) do |def|
+      target_definition = def
+      @definition.delete_if{|inside_def| inside_def.eql?(target_def}
+    end
 
 
 end
