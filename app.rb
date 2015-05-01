@@ -1,7 +1,7 @@
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
-# require('./lib/definition')
+require('./lib/definition')
 require('./lib/word.rb')
 
 get('/') do
@@ -29,7 +29,6 @@ post('/delete_word') do
 end
 
 post('/new_define/') do
-    # @word = Word.find(params.fetch('w_id').to_i())
     @word = Word.find(params.fetch('word_id').to_i())
     w_class = params.fetch('w_class')
     new_def = params.fetch('new_def')
