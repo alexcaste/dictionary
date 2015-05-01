@@ -2,6 +2,7 @@ class Word
 
     @@all_words = []
     @@w_index = 0
+    # @@sort_words={}
 
     attr_reader(:name, :definition, :w_id)
 
@@ -10,7 +11,7 @@ class Word
         @definition = []
         @@w_index = @@w_index += 1
         @w_id = @@w_index
-    end
+        @sort_words = {}    end
 
     define_singleton_method(:all) do
         @@all_words
@@ -30,7 +31,7 @@ class Word
         found_word = nil
         @@all_words.each() do |word|
             if word.w_id() == id.to_i
-                fouWordnd_word = word
+                found_word = word
             end
         end
         found_word
@@ -45,4 +46,11 @@ class Word
         @@all_words.delete_if{|search_word| search_word.eql?(target_word)}
     end
 
+    # define_singleton_method(:sorted) do
+    #     @@all_words.each() do |object|
+    #         word = object.name()
+    #         id = object.w_id()
+    #         @sort_words[word] = id
+    #     end
+    # end
 end
