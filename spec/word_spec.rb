@@ -45,7 +45,7 @@ describe(Word) do
             test_word.save()
             test_word2 = Word.new(:name => "bye")
             test_word2.save()
-            expect(Word.find(test_word2.w_id())).to(eq(test_email2))
+            expect(Word.find(test_word2.w_id())).to(eq(test_word2))
         end
     end
 

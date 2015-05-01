@@ -24,5 +24,15 @@ class Word
         @@w_index = 0
     end
 
+    define_singleton_method(:find) do |id|
+        found_word = nil
+        @@all_words.each() do |word|
+            if word.w_id() == id.to_i
+                found_word = word
+            end
+        end
+        found_word
+    end
+
 
 end
