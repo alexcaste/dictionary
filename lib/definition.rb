@@ -1,9 +1,9 @@
 class Definition
 
-    attr_reader(:w_class, :definition)
+    attr_reader(:w_class, :define)
 
     define_method(:initialize) do |attributes|
         @w_class = attributes.fetch(:class)
-        @definition = attributes.fetch(:definition)
+        @define = attributes.fetch(:define)
     end
 end
