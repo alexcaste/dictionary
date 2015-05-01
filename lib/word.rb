@@ -34,5 +34,11 @@ class Word
         found_word
     end
 
+    define_singleton_method(:delete) do |target_word|
+        to_delete = target_word.w_id()
+        @@all_words.delete_if{|search_word| search_word.eql?(target_word)}
+    end
+
+
 
 end
