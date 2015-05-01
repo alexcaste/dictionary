@@ -11,7 +11,7 @@ class Word
 
     define_method(:initialize) do |attributes|
         @name = attributes.fetch(:name)
-        @defintion = []
+        @definition = []
         @@w_index = @@w_index += 1
         @w_id = @@w_index
     end

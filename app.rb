@@ -27,3 +27,12 @@ post('/delete_word') do
     @all_words = Word.all()
     erb(:index)
 end
+
+post('/new_def') do
+    word = Word.find(params.fetch('word_id').to_i())
+    w_class = params.fetch('w_class')
+    new_def = params.fetch('new_def')
+    add_def = Definition.new(:w_class => w_class, :define => new_def)
+    word.add_definition(add_def)
+    erb(:single_word)
+end

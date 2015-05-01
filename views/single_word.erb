@@ -1,5 +1,21 @@
-<h2>Here is the definition for <%= @word.name() %>:</h2>
+<h2>Here are the definitions for <%= @word.name() %>:</h2>
 
 <ol>
     <% @word.definition().each() do |definition| %>
-    <%
+    <h4><%= definition.define() %></h4>
+    <h4>When this definition is used <%= @word.name() %> is a <%= definition.w_class() %></h4>
+    <% end %>
+
+</ol>
+
+<h4>Add a New Definition:</h4>
+    <form action = "/new_def" method = "post">
+        <input id = 'word_id' name = 'word_id' type ='hidden' value = '<%= @word.w_id() %>'>
+        <label = 'new_def'>Definition:</label>
+        <input = 'new_def' name = 'new_def' type = 'text'>
+        <br>
+        <label = 'w_class'>When this definition is used the word is a (noun, verb, adjective?):</label>
+        <input = 'w_class' name = 'w_class' type = 'text'>
+        <br>
+        <button type = "submit">Add Definition</button>
+    </form>
