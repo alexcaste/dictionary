@@ -4,6 +4,7 @@ class Word
     @@sort_words = []
     @@w_index = 0
     @sorted = []
+    @found_id = 0
 
     attr_reader(:name, :w_id)
 
@@ -22,6 +23,17 @@ class Word
 
     define_singleton_method(:unsorted) do
         @@all_words
+    end
+
+    define_singleton_method(:sort_id) do |search|
+        found_id = nil
+        @@all_words.each() do |word_object|
+            word_id = word_object.w_id()
+            if word_object.name().eql?(search)
+                found_id = word_id
+            end
+        end
+        found_id
     end
 
 

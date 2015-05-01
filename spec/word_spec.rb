@@ -70,4 +70,14 @@ describe(Word) do
         end
     end
 
+    describe('.sort_id') do
+        it("returns to unique identifier for a word taken from a word object") do
+        test_word = Word.new(:name => "hello")
+        test_word.save()
+        test_word2 = Word.new(:name => "bye")
+        test_word2.save()
+        search_word = test_word.name()
+        expect(Word.sort_id(test_word.name())).to(eq(test_word.w_id()))
+        end
+    end
 end
