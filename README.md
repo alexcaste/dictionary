@@ -4,7 +4,7 @@ By Alexandar Castaneda
 
 @ Epicodus Programming School, Portland, OR
 
-GNU General Public License, version 3 (see below). Copyright (c) 2015 Ian C. MacDonald.
+GNU General Public License, version 3 (see below). Copyright (c) 2015 Alexandar Castaneda.
 
 Description
 
@@ -20,9 +20,12 @@ Setup
 
 This app was written in ruby '2.0.0'.
 
+This app is deployed on heroku at the following url:
+>https://thawing-temple-1265.herokuapp.com/
+
 Clone this repo with
 
->clone address
+>https://github.com/alexcaste/dictionary.git
 
 Install and run:
 
