@@ -20,7 +20,8 @@ class Word
         #     @sorted.push(word.name())
         # end
         # @@sort_words = @sorted.sort()
-        @@all_words.sort_by {|name,id| id}
+        # @@all_words.sort_by {|name,id| id}
+        @@all_words
     end
 
     # define_singleton_method(:unsorted) do

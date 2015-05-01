@@ -9,7 +9,7 @@ get('/') do
     erb(:index)
 end
 
-post('/all_words') do
+post('/new_word') do
     word = params.fetch('user_word')
     Word.new({:name => word}).save()
     @all_words = Word.all()
@@ -18,4 +18,11 @@ end
 
 get('/single_word') do
     erb(:single_word)
+end
+
+post('/delete_word') do
+    word_id = params.fetch('word_id')
+    Word.delete(Word.find(word_id))
+    @all_words = Word.all()
+    erb(:index)
 end
