@@ -1,7 +1,9 @@
 class Word
 
     @@all_words = []
+    @@sort_words = []
     @@w_index = 0
+    @sorted = []
 
     attr_reader(:name, :w_id)
 
@@ -12,8 +14,16 @@ class Word
     end
 
     define_singleton_method(:all) do
+        @@all_words.each do |word|
+            @sorted.push(word.name())
+        end
+        @@sort_words = @sorted.sort()
+    end
+
+    define_singleton_method(:unsorted) do
         @@all_words
     end
+
 
     define_method(:save) do
         @@all_words.push(self)
@@ -21,6 +31,7 @@ class Word
 
     define_singleton_method(:clear) do
         @@all_words = []
+        @@sort_words = []
         @@w_index = 0
     end
 
