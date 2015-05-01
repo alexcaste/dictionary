@@ -22,4 +22,13 @@ describe(Word) do
         end
     end
 
+    describe('.clear') do
+        it("clears the all_words array") do
+            test_word = Word.new(:name => "hello")
+            test_word.save()
+            Word.clear()
+            expect(Word.all()).to(eq([]))
+        end
+    end
+
 end
