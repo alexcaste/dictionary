@@ -68,7 +68,7 @@ class Word
     end
 
     define_method(:add_definition) do |new_def|
-        @defintion.push(new_def)
+        @definition.push(new_def)
     end
 
 
