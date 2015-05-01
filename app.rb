@@ -16,7 +16,8 @@ post('/new_word') do
     erb(:index)
 end
 
-get('/single_word') do
+get('/single_word/:w_id') do
+    @word = Word.find(params.fetch('w_id').to_i())
     erb(:single_word)
 end
 

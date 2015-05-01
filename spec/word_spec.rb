@@ -1,6 +1,7 @@
-require("rspec")
-require("word")
+require('rspec')
+require('word')
 require('pry')
+require('definition')
 
 describe(Word) do
     before() do

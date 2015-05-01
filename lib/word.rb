@@ -7,10 +7,11 @@ class Word
     # @@sorting_id = 0
 
 
-    attr_reader(:name, :w_id)
+    attr_reader(:name, :definition, :w_id)
 
     define_method(:initialize) do |attributes|
         @name = attributes.fetch(:name)
+        @defintion = []
         @@w_index = @@w_index += 1
         @w_id = @@w_index
     end
@@ -64,6 +65,10 @@ class Word
     define_singleton_method(:delete) do |target_word|
         to_delete = target_word.w_id()
         @@all_words.delete_if{|search_word| search_word.eql?(target_word)}
+    end
+
+    define_method(:add_definition) do |new_def|
+        @defintion.push(new_def)
     end
 
 
