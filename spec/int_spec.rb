@@ -1,4 +1,11 @@
-# require('capybara/rspec')
-# require('./app')
-# Capybara.app = Sinatra::Application
-# set(:show_exceptions, false)
+require('capybara/rspec')
+require('./app')
+Capybara.app = Sinatra::Application
+set(:show_exceptions, false)
+
+describe('path for index', {:type => :feature}) do
+  it('shows a list of words') do
+    visit('/')
+    expect(page).to have_content('Dictionary')
+  end
+end
