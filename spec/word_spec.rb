@@ -3,9 +3,9 @@ require("word")
 require('pry')
 
 describe(Word) do
-    # before() do
-    #     Word.clear()
-    # end
+    before() do
+        Word.clear()
+    end
 
     describe('#name') do
         it('returns the name of word') do
