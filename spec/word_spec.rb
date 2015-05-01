@@ -13,4 +13,13 @@ describe(Word) do
         expect(test_word.name()).to(eq("hello"))
         end
     end
+
+    describe('#save') do
+        it("saves a word into an array as an object") do
+            test_word = Word.new(:name => "hello")
+            test_word.save()
+            expect(Word.all()).to(eq([test_word]))
+        end
+    end
+
 end
